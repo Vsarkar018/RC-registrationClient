@@ -134,16 +134,16 @@ function App() {
   return !submitted ? (
     <>
       <div className="header">
-        <img src="src/images/5.svg" alt="Header Image" />
+        <img src="/src/images/5.svg" alt="Header Image" />
         <h1>
           Robotics Club <span className="header-span">AKGEC</span>
         </h1>
       </div>
       <div className="container">
         {isMobile ? (
-          <img className="poster" src="src/images/flex2.jpeg" alt="" />
+          <img className="poster" src="/src/images/flex2.jpeg" alt="" />
         ) : (
-          <img className="poster" src="src/images/flex.jpeg" alt="" />
+          <img className="poster" src="/src/images/flex.jpeg" alt="" />
         )}
         <div className="right">
           <h2>Register</h2>
