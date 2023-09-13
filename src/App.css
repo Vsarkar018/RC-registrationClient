@@ -1,0 +1,237 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  /* background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%); */
+}
+#root {
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  width: 100%;
+  /* background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%); */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* border: 5px solid white; */
+  border-radius: 15px;
+  padding: 50px;
+  padding-top: 0;
+  gap: 50px;
+}
+
+.header {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-span {
+  color: #00c9ff;
+}
+
+/* Style for the header image */
+.header img {
+  width: 10%;
+}
+
+/* Style for the heading */
+.header h1 {
+  font-size: 30px;
+}
+.poster {
+  width: 50%;
+}
+.left {
+  width: 50%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  background-color: black;
+  align-items: center;
+  line-height: 36px;
+}
+
+.right h2 {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  /* border-bottom: 2px solid white; */
+}
+
+.right span {
+  color: #00c9ff;
+}
+
+.right label {
+  color: white;
+  font-size: 18px;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  padding-left: 40px;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#fullname {
+  color: black;
+}
+.input-field p {
+  color: red;
+}
+.right input[type="text"],
+input[type="number"],
+input[type="email"] {
+  width: 80%;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.result {
+  color: #fff;
+}
+.right select {
+  width: 80%;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.gender-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 1px solid white;
+  padding-top: 10px;
+}
+
+.gender-category {
+  margin: 10px 0;
+  color: white;
+}
+
+.gender-category label {
+  padding: 0 20px 0 5px;
+}
+
+.gender-category label,
+.gender-category input {
+  cursor: pointer;
+  font-size: 27px;
+}
+
+.submit {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 20px;
+  color: black;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #00c9ff;
+  width: 80%;
+}
+
+.submit:hover {
+  background-color: cornflowerblue;
+}
+
+#success {
+  color: white;
+}
+.red {
+  border-color: red;
+  border-width: 5px;
+}
+@media (max-width: 786px) {
+  .header h1 {
+    font-size: 25px;
+  }
+  .input-field p {
+    color: red;
+  }
+  .header img {
+    display: none;
+  }
+  .poster {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+  }
+
+  .container {
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right {
+    width: 100%;
+  }
+  .right > h2 {
+    text-align: center;
+  }
+  form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  select,
+  .input-field {
+    width: 80%;
+  }
+
+  .right h2 {
+    font-size: 25px;
+    margin: auto;
+  }
+
+  .submit {
+    width: 80%;
+  }
+  .button-submit {
+    width: 80%;
+  }
+}
