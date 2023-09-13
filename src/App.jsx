@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import axios from "axios";
-import { FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
 function App() {
   const captchRef = useRef();
@@ -33,7 +33,7 @@ function App() {
   });
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(true);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 786);
@@ -115,10 +115,13 @@ function App() {
       return;
     }
     try {
-      const response = await axios.post("http://127.0.0.1:5000/", {
-        formData,
-        recaptchaValue,
-      });
+      const response = await axios.post(
+        "https://recruitmentdriveserver.onrender.com/",
+        {
+          formData,
+          recaptchaValue,
+        }
+      );
       if (response) setSubmitted(true);
     } catch (error) {
       setDuplicate(error.response.data.msg?.split(" ")[1]);
@@ -335,22 +338,59 @@ function App() {
     </>
   ) : (
     <>
-      <h1 style={{ color: "white" }}>Registered Successfully</h1>\
-      <div style={{ display: "flex", gap: "10px" }}>
-        <h2>
-          <a
-            href="https://www.instagram.com/akgecrobotics/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram size={40} style={{ marginRight: "10px" }} />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          textAlign: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        <h1 style={{ color: "white" }}>Registered Successfully</h1>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <h2>
+            <a
+              href="https://www.instagram.com/akgecrobotics/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram
+                size={40}
+                style={{
+                  marginRight: "10px",
+                  color: "#833ab4",
+                }}
+              />
+            </a>
+          </h2>
+          <h2>
+            <a href="mailto:akgecrobotics@gmail.com">
+              <FaEnvelope
+                size={40}
+                style={{ marginRight: "10px", color: "#db4437" }}
+              />
+            </a>
+          </h2>
+        </div>
+        <div
+          style={{
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            textAlign: "center",
+            marginTop: "30px",
+          }}
+        >
+          <h2>Join the WhatsApp Group for further Notification</h2>
+          <a href="https://chat.whatsapp.com/KLsOMnOeFw4DCWYwjAw6gp">
+            <FaWhatsapp
+              size={40}
+              style={{ marginRight: "10px", color: "#25D366" }}
+            />
           </a>
-        </h2>
-        <h2>
-          <a href="mailto:akgecrobotics@gmail.com">
-            <FaEnvelope size={40} style={{ marginRight: "10px" }} />
-          </a>
-        </h2>
+        </div>
       </div>
     </>
   );
