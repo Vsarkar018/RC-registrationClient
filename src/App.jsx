@@ -5,6 +5,15 @@ import { FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
 function App() {
   const captchRef = useRef();
+  const nameRef = useRef();
+  const gendertRef = useRef();
+  const emailRef = useRef();
+  const studentNoRef = useRef();
+  const branchRef = useRef();
+  const phoneNoRef = useRef();
+  const domainRef = useRef();
+  const stayRef = useRef();
+
   const [recaptchaValue, setRecaptchaValue] = useState(null);
   const [failedVerification, setfailedVerification] = useState();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 786);
@@ -74,36 +83,44 @@ function App() {
     };
     if (!formData.name) {
       newErrors.name = "Name cannot be empty";
+      nameRef.current.focus();
     }
 
     if (!formData.gender || formData.gender === "select") {
       newErrors.gender = "Please select your Gender";
+      gendertRef.current.focus();
     }
 
     const emailRegex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!formData.email || !emailRegex.test(formData.email.toLowerCase())) {
       newErrors.email = "Please enter a valid email";
+      emailRef.current.focus();
     }
 
     if (!formData.studentNo || !formData.studentNo.startsWith("22")) {
       newErrors.studentNo = "Enter a valid Student Number";
+      studentNoRef.current.focus();
     }
 
     if (!formData.branch || formData.branch === "select") {
       newErrors.branch = "Please select your Branch";
+      branchRef.current.focus();
     }
 
     if (!formData.phoneNo || formData.phoneNo.toString().length !== 10) {
       newErrors.phoneNo = "Enter a valid 10-digit phone number";
+      phoneNoRef.current.focus();
     }
 
     if (!formData.domain || formData.domain === "select") {
       newErrors.domain = "Please select your Domain Preference";
+      domainRef.current.focus();
     }
 
     if (!formData.stay || formData.stay === "select") {
       newErrors.stay = "Please select your Stay";
+      stayRef.current.focus();
     }
     const hasError = Object.values(newErrors).some((error) => error !== "");
     setErrors(newErrors);
@@ -151,6 +168,7 @@ function App() {
             <div className="input-field">
               <label htmlFor="fullName">Full Name :</label>
               <input
+                ref={nameRef}
                 className={errors.name ? "red" : ""}
                 value={formData.name}
                 type="text"
@@ -164,6 +182,7 @@ function App() {
             <div className="input-field">
               <label htmlFor="gender">Gender :</label>
               <select
+                ref={gendertRef}
                 name="gender"
                 id="gender"
                 required
@@ -181,6 +200,7 @@ function App() {
             <div className="input-field">
               <label htmlFor="email">Email :</label>
               <input
+                ref={emailRef}
                 type="email"
                 id="email"
                 name="email"
@@ -199,6 +219,7 @@ function App() {
               <label>Student No :</label>
 
               <input
+                ref={studentNoRef}
                 type="number"
                 name="studentNo"
                 id="studentNo"
@@ -219,6 +240,7 @@ function App() {
               <label>Branch :</label>
 
               <select
+                ref={branchRef}
                 name="branch"
                 id="branch"
                 aria-placeholder="Select your branch"
@@ -248,6 +270,7 @@ function App() {
               </label>
 
               <input
+                ref={phoneNoRef}
                 type="text"
                 id="phoneNumber"
                 name="phoneNo"
@@ -262,6 +285,7 @@ function App() {
               <label>Domain Preference :</label>
 
               <select
+                ref={domainRef}
                 name="domain"
                 id="domain"
                 required
@@ -304,6 +328,7 @@ function App() {
               <label>Stay :</label>
 
               <select
+                ref={stayRef}
                 name="stay"
                 id="stay"
                 required
