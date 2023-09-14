@@ -112,7 +112,7 @@ form {
 input,
 select {
   height: 58%;
-  font-size: 9px;
+  font-size: 12px;
   width: 80%;
   border-radius: 10px;
   padding: 8px;
@@ -164,7 +164,7 @@ input[type="email"] {
 .submit {
   width: 100%;
   padding: 10px 15px;
-  font-size: 10px;
+  font-size: 12px;
   color: black;
   font-weight: 700;
   border-radius: 10px;
