@@ -6,7 +6,6 @@ import { FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
 import Modal from "./Modal";
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
   const captchRef = useRef();
   const nameRef = useRef();
   const gendertRef = useRef();
@@ -44,7 +43,7 @@ function App() {
     stay: "",
   });
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -128,7 +127,6 @@ function App() {
     const hasError = Object.values(newErrors).some((error) => error !== "");
     setErrors(newErrors);
     setError(hasError);
-    console.log(error);
     if (hasError) {
       setLoading(false);
       return;
