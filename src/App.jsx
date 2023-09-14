@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef } from "react";
+
 import "./App.css";
 import axios from "axios";
 import { FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
+import Modal from "./Modal";
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const captchRef = useRef();
   const nameRef = useRef();
   const gendertRef = useRef();
@@ -41,7 +44,7 @@ function App() {
     stay: "",
   });
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -362,6 +365,7 @@ function App() {
           </form>
         </div>
       </div>
+      {loading && <Modal />}
     </>
   ) : (
     <>
