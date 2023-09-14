@@ -33,7 +33,7 @@ function App() {
   });
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(true);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 786);
@@ -58,7 +58,6 @@ function App() {
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    captchRef.current.reset();
     if (!recaptchaValue) {
       setLoading(false);
       return;
@@ -129,6 +128,7 @@ function App() {
         setfailedVerification(true);
       }
     }
+    captchRef.current.reset();
     setLoading(false);
   };
   return !submitted ? (
@@ -281,20 +281,22 @@ function App() {
                 type="text"
                 id="project"
                 name="projects"
-                placeholder="If No mention NA"
+                placeholder="If yes, mention them (github repo preffered) else write NA "
                 value={formData.projects}
                 onChange={handleInputChange}
               />
             </div>
             <div className="input-field">
-              <label htmlFor="society">Are you part of other society? :</label>
+              <label htmlFor="society">
+                Are you part of one or more societies? :
+              </label>
 
               <input
                 type="text"
                 id="society"
                 name="society"
                 value={formData.society}
-                placeholder="If Yes,Kindly mention else write No"
+                placeholder="If Yes, mention them. Else write No"
                 onChange={handleInputChange}
               />
             </div>
@@ -343,8 +345,10 @@ function App() {
           display: "flex",
           alignItems: "center",
           textAlign: "center",
-          justifyContent: "center",
           flexDirection: "column",
+          justifyContent: "center",
+          width: "100%",
+          height: "80vh ",
         }}
       >
         <h1 style={{ color: "white" }}>Registered Successfully</h1>
@@ -384,11 +388,15 @@ function App() {
           }}
         >
           <h2>Join the WhatsApp Group for further Notification</h2>
-          <a href="https://chat.whatsapp.com/KLsOMnOeFw4DCWYwjAw6gp">
-            <FaWhatsapp
-              size={40}
-              style={{ marginRight: "10px", color: "#25D366" }}
-            />
+          <FaWhatsapp
+            size={40}
+            style={{ marginRight: "10px", color: "#25D366" }}
+          />
+          <a
+            style={{ color: "blue" }}
+            href="https://chat.whatsapp.com/KLsOMnOeFw4DCWYwjAw6gp"
+          >
+            Click here
           </a>
         </div>
       </div>
