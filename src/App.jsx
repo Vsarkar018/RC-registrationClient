@@ -393,7 +393,7 @@ function App() {
             style={{ marginRight: "10px", color: "#25D366" }}
           />
           <a
-            style={{ color: "blue" }}
+            style={{ color: "#ADD8E6" }}
             href="https://chat.whatsapp.com/KLsOMnOeFw4DCWYwjAw6gp"
           >
             Click here
