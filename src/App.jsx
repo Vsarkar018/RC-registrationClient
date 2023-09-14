@@ -160,7 +160,7 @@ function App() {
         {isMobile ? (
           <img className="poster" src="/flex2.jpeg" alt="" />
         ) : (
-          <img className="poster" src="/flex.jpeg" alt="" />
+          <img className="poster" src="/poster.png" alt="" />
         )}
         <div className="right">
           <h2>Register</h2>
