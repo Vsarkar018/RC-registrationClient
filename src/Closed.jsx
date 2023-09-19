@@ -9,6 +9,7 @@ export const Closed = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        textAlign: "center",
       }}
     >
       <h1>Registration are closed...</h1>
