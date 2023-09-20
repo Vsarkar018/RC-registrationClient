@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import { Closed } from "./Closed.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Closed />
+    <App />
+    {/* <Closed /> */}
   </React.StrictMode>
 );
